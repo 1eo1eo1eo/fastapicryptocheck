@@ -1,7 +1,6 @@
 from fastapi import APIRouter
 
 from core.config import settings
-from api_import.http_client import CMCHTTPClient
 
 from .init import cmc_client
 
