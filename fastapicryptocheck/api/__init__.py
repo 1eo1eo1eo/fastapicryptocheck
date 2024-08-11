@@ -7,3 +7,7 @@ from .get_crypto_currencies import router as get_crypto_currencies_router
 router = APIRouter(
     prefix=settings.api.prefix
 )
+
+router.include_router(
+    get_crypto_currencies_router,
+)
