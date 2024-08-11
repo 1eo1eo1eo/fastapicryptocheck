@@ -10,12 +10,10 @@ class APIPrefix(BaseModel):
     prefix: str = "/api"
 
 class Settings(BaseSettings):
-    #CMC_API_KEY: str
+    CMC_API_KEY: str
 
     model_config = SettingsConfigDict(
         env_file=".env",
-        env_nested_delimiter="__",
-        env_prefix="CMC__",
     )
 
     run: RunConfig = RunConfig()

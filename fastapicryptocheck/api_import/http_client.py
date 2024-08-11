@@ -10,7 +10,6 @@ class HTTPClient:
             }
         )
 
-# pro-api.coinmarketcap.com
 
 class CMCHTTPClient(HTTPClient):
     async def get_listings(self):
