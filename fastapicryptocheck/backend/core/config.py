@@ -8,6 +8,7 @@ class RunConfig(BaseModel):
 
 class APIPrefix(BaseModel):
     prefix: str = "/api"
+    currencies_prefix: str = "/cryptocurrencies"
 
 class Settings(BaseSettings):
     CMC_API_KEY: str
@@ -20,4 +21,4 @@ class Settings(BaseSettings):
     api: APIPrefix = APIPrefix()
 
 
-settings = Settings()
+settings = Settings() #type: ignore
