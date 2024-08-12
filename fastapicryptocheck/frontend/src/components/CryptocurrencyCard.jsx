@@ -1,11 +1,13 @@
-import { Card } from "antd"
+import { Card, Space } from "antd"
 
 
 function CryptocurrencyCard(props) {
 
     const {currency} = props
 
-    const price = Math.round(currency.quote.USD.price)
+    const price = Math.round(currency.quote.USD.price * 100) / 100
+    const percent_change_24h = Math.round(currency.quote.USD.percent_change_24h * 1000) / 1000
+    const percent_change_90d = Math.round(currency.quote.USD.percent_change_90d * 1000) / 1000
 
     return (
       <div>
@@ -17,15 +19,16 @@ function CryptocurrencyCard(props) {
             </div>
         }
         style={{
-            width: 300,
+            width: 500,
+            height: 300
         }}
         >
-        <p>Текущая цена: {price}</p>
-        <p>Card content</p>
-        <p>Card content</p>
+          <p>Текущая цена: {price} $</p>
+          <p>Изменение за 24 часа: {percent_change_24h} %</p>
+          <p>Изменение за 90 дней : {percent_change_90d} %</p>
         </Card>
       </div>
     )
   }
   
-  export default CryptocurrencyCard
+  export default CryptocurrencyCard;
