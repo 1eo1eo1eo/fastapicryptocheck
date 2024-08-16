@@ -1,0 +1,14 @@
+FROM tiangolo/uvicorn-gunicorn-fastapi:latest
+
+WORKDIR /app
+
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+RUN apt-get update
+
+COPY . /app/
+
+EXPOSE 8000
+
+CMD [ "uvicorn", "main:main_app", "--reload" ]
