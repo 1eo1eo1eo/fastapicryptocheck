@@ -15,7 +15,6 @@ main_app.include_router(
 origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "http://172.29.0.2:5173",
 ]
 
 main_app.add_middleware(
