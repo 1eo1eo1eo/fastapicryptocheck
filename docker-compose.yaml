@@ -10,6 +10,8 @@ services:
       - "127.0.0.1:8000:8000"
     expose:
       - 8000
+    networks:
+      - app-network
 
   frontend:
     build:
@@ -20,3 +22,10 @@ services:
       - "127.0.0.1:5173:5173"
     expose:
       - 5173
+    command: npm run dev -- --host
+    networks:
+      - app-network
+  
+networks:
+  app-network:
+    driver: bridge
